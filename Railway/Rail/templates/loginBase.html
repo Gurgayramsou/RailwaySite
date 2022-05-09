@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-image: linear-gradient(
+            rgba(4, 9, 30, 0.6),
+            rgba(4, 9, 30, 0.6)
+          ),
+          url("{% static 'railwayBg.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        width: 100%;
+      }
+    </style>
+    <title>Railway.com</title>
+  </head>
+  <body>
+    <nav class="navItems">
+      <div class="profileInfo">
+        {% if request.user %}
+        <p class="userName"><strong>{{ request.user.username }}</strong></p>
+        {% else %}
+        <p class="userName"><strong>User</strong></p>
+        {% endif %}
+        <img src="{% static 'user.png' %}" alt="{{ request.user.username }}" />
+      </div>
+    </nav>
+    <header class="logoContent">
+      <img src="{% static 'railLogoFin.png' %}" alt="logo" id="logo" />
+      <h1 class="animate__animated animate__backInDown animate__faster">
+        Indian Railway
+      </h1>
+    </header>
+    <main class="mainContent">{% block mainContent %}{% endblock %}</main>
+  </body>
+</html>

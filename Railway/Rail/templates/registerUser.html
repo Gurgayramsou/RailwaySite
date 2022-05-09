@@ -1,0 +1,49 @@
+{% extends 'loginBase.html' %} {% load static %} {% block mainContent %}
+<form action="" class="formContent" method="POST">
+  {% csrf_token %}
+  <a href="{% url 'login' %}">
+    <img
+      src="{% static 'backwardArrow.svg' %}"
+      alt="go back"
+      class="animate__animated animate__zoomIn animate__delay-1s"
+  /></a>
+  <p><small>Back</small></p>
+  <h2
+    id="loginLabel"
+    class="animate__animated animate__bounce animate__delay-1s"
+  >
+    Register
+  </h2>
+  <input id="nameEntry" type="text" placeholder="Name" name="uname" required />
+  <input id="nameEntry" type="text" placeholder="Email" name="email" required />
+  <input
+    id="nameEntry"
+    type="text"
+    placeholder="Enter password"
+    name="pw"
+    required
+  />
+  <input
+    id="nameEntry"
+    type="text"
+    placeholder="Confirm password"
+    name="rpw"
+    required
+  />
+  <div
+    class="conditionBox"
+    style="
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      color: back;
+      text-shadow: 1px 1px 1px white;
+    "
+  >
+    <input type="checkbox" name="accepted" id="" required />
+    <p><small>I accept terms and conditions</small></p>
+  </div>
+  <button type="submit" class="btnSubmit">Create</button>
+</form>
+{% endblock %}

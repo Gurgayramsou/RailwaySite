@@ -1,0 +1,30 @@
+{% extends 'loginBase.html' %} {% load static %} {% block mainContent %}
+<form action="/" class="formContent" method="POST">
+  {% csrf_token %}
+  <h2
+    id="loginLabel"
+    class="animate__animated animate__bounce animate__delay-1s"
+  >
+    Login
+  </h2>
+  <input id="nameEntry" type="text" placeholder="Email" name="uname" required />
+  <input
+    id="pwEntry"
+    type="password"
+    placeholder="********"
+    name="pw"
+    required
+  />
+  <div class="captcha">
+    <input type="text" placeholder="Enter Captcha" required />
+    <input type="text" value="{{ num }}" name="capt" readonly />
+  </div>
+  <button type="submit" class="btnSubmit">Submit</button>
+  <p class="registerLink">
+    <small
+      >New user? <br />Please
+      <a href="{% url 'registerUser' %}">Register</a></small
+    >
+  </p>
+</form>
+{% endblock %}

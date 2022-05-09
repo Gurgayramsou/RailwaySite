@@ -1,0 +1,11 @@
+{% extends 'loginBase.html' %} {% load static %} {% block mainContent %}
+<div class="errorBlock">
+  <p>{{errorMsg}}</p>
+  <a href="{% url 'login' %}">
+    <img
+      src="{% static 'backwardArrow.svg' %}"
+      alt="go back"
+      class="animate__animated animate__zoomIn animate__delay-1s"
+  /></a>
+</div>
+{% endblock %}

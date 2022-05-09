@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+
+/* displaying the profile at top right corner */
+
+.navItems {
+  display: flex;
+}
+
+.profileInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profileInfo img {
+  height: 60%;
+  width: 5%;
+  margin-right: 2%;
+}
+
+h1,
+.userName {
+  color: white;
+}
+
+/* logo of railway */
+.logoContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+}
+
+/* media queries for mobile first approach 768px and below */
+@media screen and (max-width: 768px) {
+  .logoContent img {
+    width: 5em;
+    height: 5em;
+  }
+  h1 {
+    font-size: medium;
+    margin-top: 2%;
+  }
+  .mainContent {
+    min-width: 60%;
+    margin: 3% 0.8rem;
+    align-items: center;
+  }
+}
+
+/* main content box styling */
+.mainContent {
+  display: flex;
+  min-height: 40vh;
+  width: 20%;
+  background-color: rgba(232, 232, 232, 0.7);
+  margin: 3% auto;
+  border-radius: 10px;
+}
+
+.mainContent:hover {
+  background-color: rgba(232, 232, 232, 0.5);
+  box-shadow: 0px 10px 10px white;
+}
+
+/* form container here */
+.formContent {
+  width: 100%;
+  margin: 16% auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* login fields styling */
+#loginLabel {
+  margin: 0 auto;
+  font-weight: 5em;
+  font-size: 1.8em;
+  font-family: "Poppins", sans-serif;
+}
+#mailEntry,
+#nameEntry,
+#pwEntry {
+  margin: 2% 14%;
+  height: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/*submit button styling in login page */
+.btnSubmit {
+  text-align: center;
+  align-items: center;
+  width: 4rem;
+  margin: 5px auto;
+  height: 1.7rem;
+  background-color: rgba(7, 64, 143, 0.3);
+  color: white;
+  font-family: sans-serif;
+  font-weight: 5em;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px white;
+  transition: all 1s;
+}
+.btnSubmit:hover {
+  width: 5em;
+  height: 2em;
+  color: black;
+  background-color: white;
+  box-shadow: 0px 2px 2px black;
+}
+
+/* to avoid black border when focus on i/p field */
+#nameEntry:focus,
+#pwEntry:focus,
+.captcha > input:focus {
+  outline: none !important;
+  border-color: #719ece;
+  box-shadow: 4px 4px 5px brown;
+}
+
+/* captcha styling */
+.captcha {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 2% 20%;
+}
+
+.captcha > input {
+  width: 38%;
+  padding: 1%;
+  margin: 0.2%;
+}
+
+.captcha:nth-child(1) {
+  background: blue;
+}
+
+/* registration links at bottom */
+.registerLink {
+  margin-left: 5%;
+  padding: 5px;
+  text-align: center;
+  padding-top: 5%;
+}
+
+/* error msg display */
+
+.errorBlock {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30%;
+  padding: 5px;
+}
+.errorBlock p {
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+/* animate backward button */
+
+.errorBlock img {
+  width: 70px;
+  height: 70px;
+}
+
+/* checkbox for terms and condition */
