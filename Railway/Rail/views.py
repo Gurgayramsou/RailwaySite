@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 import random
 from django.contrib import sessions
 # Create your views here.
-
+#Login authentication view
 def index(request):
     if request.method=='POST':
         name = request.POST["uname"]
@@ -16,7 +16,7 @@ def index(request):
         #     errorMsg = 'Captcha doesnt match, please try again!!'
         #     content={'errorMsg':errorMsg}
         #     return render(request,'loginError.html',content)
-        print(user)
+        
         if user is not None:
             login(request,user)
             return redirect('/home/')
